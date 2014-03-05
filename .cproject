@@ -30,6 +30,15 @@
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="STM32F10X_HD"/>
 								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.1181504362" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/Lib/STM32F10x_StdPeriph_Lib_V3.5.0/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Framework/Lib/FreeRTOSV7.6.0/M3}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Framework/Lib/FreeRTOSV7.6.0/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Framework/Lib/FreeRTOSV7.6.0/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/Lib/STM32F10x_StdPeriph_Lib_V3.5.0/STM32F10x_StdPeriph_Driver/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/Lib/STM32F10x_StdPeriph_Lib_V3.5.0/STM32F10x_StdPeriph_Driver/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/User}&quot;"/>
+								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input.1788166082" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.c.compiler.base.input"/>
 							</tool>
 							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.cpp.compiler.debug.1892763352" name="ARM Windows GCC C++ Compiler (Sourcery Lite Bare)" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.cpp.compiler.debug">
@@ -76,14 +85,17 @@
 							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.release.1197480536" name="ARM Windows GCC Assembler (Sourcery Lite Bare)" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.assembler.release">
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input.2089907240" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.assembler.base.input"/>
 							</tool>
-							<tool id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.release.1697173575" name="ARM Windows GCC C Compiler (Sourcery Lite Bare)" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.release">
+							<tool command="arm-none-eabi-gcc" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.release.1697173575" name="ARM Windows GCC C Compiler (Sourcery Lite Bare)" superClass="org.eclipse.cdt.cross.arm.gnu.sourcery.windows.elf.c.compiler.release">
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.681882569" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.317891755" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 									<listOptionValue builtIn="false" value="STM32F10X_HD"/>
 								</option>
-								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.887575640" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.887575640" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/Lib/STM32F10x_StdPeriph_Lib_V3.5.0/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Framework/Lib/FreeRTOSV7.6.0/M3}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Framework/Lib/FreeRTOSV7.6.0/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Framework/Lib/FreeRTOSV7.6.0/Source/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/Lib/STM32F10x_StdPeriph_Lib_V3.5.0/STM32F10x_StdPeriph_Driver/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/Lib/STM32F10x_StdPeriph_Lib_V3.5.0/STM32F10x_StdPeriph_Driver/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source/User}&quot;"/>

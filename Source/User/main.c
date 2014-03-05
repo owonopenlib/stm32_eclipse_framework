@@ -1,13 +1,35 @@
 #include "stm32f10x.h"
+/* Scheduler includes. */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
 
 void UsartInit(void);
 void UsartPrintChar(char c);
 void UsartPrintString(char *s);
 void Delay_mS(uint32_t n);
+void TestTask(void *pvParameters);
 
 int main(void)
 {
 	UsartInit();
+
+	UsartPrintString("system enter.\n");
+
+	UsartPrintString("task create.\n");
+	xTaskCreate(TestTask, ( signed portCHAR * ) "Usart",
+		configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
+
+	UsartPrintString("task start scheduler.\n");
+	vTaskStartScheduler();
+
+	UsartPrintString("Will only get here "
+		"if there was not enough heap space to create the idle task..\n");
+	return 0;
+}
+
+void TestTask(void *pvParameters)
+{
 	while (1) {
 		UsartPrintString("Hello eclipse.\n");
 		Delay_mS(500);
@@ -53,6 +75,9 @@ void UsartPrintChar(char c)
 void UsartPrintString(char *s)
 {
 	while (*s) {
+		if (*s == '\n') {
+			UsartPrintChar('\r');
+		}
 		UsartPrintChar(*s++);
 	}
 }
