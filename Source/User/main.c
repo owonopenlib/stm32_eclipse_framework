@@ -3,12 +3,10 @@
 void UsartInit(void);
 void UsartPrintChar(char c);
 void UsartPrintString(char *s);
-void DelayInit(void);
-void Delay_mS(uint16_t n);
+void Delay_mS(uint32_t n);
 
 int main(void)
 {
-	DelayInit();
 	UsartInit();
 	while (1) {
 		UsartPrintString("Hello eclipse.\n");
@@ -59,21 +57,14 @@ void UsartPrintString(char *s)
 	}
 }
 
-void DelayInit(void)
-{
-	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);
-}
-
-void Delay_mS(uint16_t n)
+void Delay_mS(uint32_t n)
 {
 	uint32_t tmp;
 
-	SysTick->LOAD = (uint32_t) n * (SystemCoreClock / 8000);
-	SysTick->VAL = 0x00;
-	SysTick->CTRL = 0x01;
-	do {
-		tmp = SysTick->CTRL;
-	} while ((tmp & 0x01) && !(tmp & (1 << 16)));
-	SysTick->CTRL = 0x00;
-	SysTick->VAL = 0X00;
+	while (n--) {
+		tmp = 4000;
+		while (tmp--) {
+			;
+		}
+	}
 }
